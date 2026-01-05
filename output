@@ -1,0 +1,161 @@
+Test set: Accuracy: 950/10000 (10%), Error: 9050/10000 (90%)
+
+8bit sparse 0, 2
+
+Test set: Accuracy: 1229/10000 (12%), Error: 8771/10000 (88%)
+
+8bit sparse 0, 3
+
+Test set: Accuracy: 1667/10000 (17%), Error: 8333/10000 (83%)
+
+8bit sparse 0, 4
+
+Test set: Accuracy: 7308/10000 (73%), Error: 2692/10000 (27%)
+
+8bit sparse 0, 5
+
+Test set: Accuracy: 9602/10000 (96%), Error: 398/10000 (4%)
+
+8bit sparse 0, 6
+
+Test set: Accuracy: 9821/10000 (98%), Error: 179/10000 (2%)
+
+8bit sparse 0, 7
+
+Test set: Accuracy: 9821/10000 (98%), Error: 179/10000 (2%)
+
+############################################
+8bit dense 0, 1
+
+Test set: Accuracy: 4612/10000 (46%), Error: 5388/10000 (54%)
+
+8bit dense 0, 2
+
+Test set: Accuracy: 1041/10000 (10%), Error: 8959/10000 (90%)
+
+8bit dense 0, 3
+
+Test set: Accuracy: 1345/10000 (13%), Error: 8655/10000 (87%)
+
+8bit dense 0, 4
+
+Test set: Accuracy: 9592/10000 (96%), Error: 408/10000 (4%)
+
+8bit dense 0, 5
+
+Test set: Accuracy: 9724/10000 (97%), Error: 276/10000 (3%)
+
+8bit dense 0, 6
+
+Test set: Accuracy: 9829/10000 (98%), Error: 171/10000 (2%)
+
+8bit dense 0, 7
+
+Test set: Accuracy: 9829/10000 (98%), Error: 171/10000 (2%)
+
+############################################
+16bit dense 0, 1
+
+Test set: Accuracy: 1313/10000 (13%), Error: 8687/10000 (87%)
+
+16bit dense 0, 2
+
+Test set: Accuracy: 662/10000 (7%), Error: 9338/10000 (93%)
+
+16bit dense 0, 3
+
+Test set: Accuracy: 974/10000 (10%), Error: 9026/10000 (90%)
+
+16bit dense 0, 4
+
+Test set: Accuracy: 1227/10000 (12%), Error: 8773/10000 (88%)
+
+16bit dense 0, 5
+
+Test set: Accuracy: 1643/10000 (16%), Error: 8357/10000 (84%)
+
+16bit dense 0, 6
+
+Test set: Accuracy: 1797/10000 (18%), Error: 8203/10000 (82%)
+
+16bit dense 0, 7
+
+Test set: Accuracy: 1198/10000 (12%), Error: 8802/10000 (88%)
+
+16bit dense 0, 8
+
+Test set: Accuracy: 2887/10000 (29%), Error: 7113/10000 (71%)
+
+16bit dense 0, 9
+
+Test set: Accuracy: 1660/10000 (17%), Error: 8340/10000 (83%)
+
+16bit dense 0, 10
+
+Test set: Accuracy: 4584/10000 (46%), Error: 5416/10000 (54%)
+
+16bit dense 0, 11
+
+Test set: Accuracy: 9287/10000 (93%), Error: 713/10000 (7%)
+
+16bit dense 0, 12
+
+Test set: Accuracy: 9482/10000 (95%), Error: 518/10000 (5%)
+
+16bit dense 0, 13
+
+Test set: Accuracy: 9741/10000 (97%), Error: 259/10000 (3%)
+
+16bit dense 0, 14
+
+Test set: Accuracy: 9829/10000 (98%), Error: 171/10000 (2%)
+
+16bit dense 0, 15
+
+Test set: Accuracy: 9829/10000 (98%), Error: 171/10000 (2%)
+
+
+
+
+############################################
+
+
+
+############################################
+4bit dense 0, 1
+
+Test set: Accuracy: 9566/10000 (96%), Error: 434/10000 (4%)
+
+############################################
+4bit dense 0, 1
+
+
+############################################
+4bit dense 0, 1
+
+############################################
+
+
+############################################
+4bit dense 0, 1
+
+############################################
+
+
+
+############################################
+############################################
+4bit dense 0, 1
+
+############################################
+4bit dense 0, 1
+
+Test set: Accuracy: 9566/10000 (96%), Error: 434/10000 (4%)
+
+4bit dense 0, 2
+
+Test set: Accuracy: 9807/10000 (98%), Error: 193/10000 (2%)
+
+4bit dense 0, 3
+
+Test set: Accuracy: 9807/10000 (98%), Error: 193/10000 (2%)
