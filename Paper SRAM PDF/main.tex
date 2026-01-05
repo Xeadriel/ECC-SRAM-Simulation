@@ -1,0 +1,93 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Conference Paper Title}
+
+\author{\IEEEauthorblockN{Oğulcan Aşık, Ji Wu \& Kazuteru Namba}
+\IEEEauthorblockA{\textit{Graduate School of Science and Engineering} \\
+\textit{Chiba University}\\
+1-33 Yayoi-cho, Inage-ku, Chiba-shi, Chiba, 263-8522 Japan\\
+E-mail: ogasi100@uni-duesseldorf.de, cafa0748@chiba-u.jp \& namba@ieee.org}
+}
+
+\maketitle
+
+\begin{abstract}
+abstract
+\end{abstract}
+
+\begin{IEEEkeywords}
+SRAM, quantization, ECC, CNN
+\end{IEEEkeywords}
+
+\section{Introduction}
+Recently computer-based classification has come very far. Convolutional neural networks (CNN) can perform various tasks similar to the way humans can. However, significant calculations and thus power requirements are required to achieve such goals. Previous studies proposed quantization \cite{jacob2017quantizationtrainingneuralnetworks} and low-voltage computation \cite{jiwuSRAM}. But lowering voltage comes with not insignificant bit error rates (BER) \cite{yangSRAM} that in turn lower the accuracy of a model in a significant way. 
+
+Quantization has been shown to be an effective method to use while mostly preserving good accuracy  \cite{10.1145/3623402} \cite{jiwuSRAM}.  In this paper we have expanded on the ideas put forth in \cite{jiwuSRAM} by exploring higher BERs in terms of classification accuracy coupled with a single bit error correcting code (ECC) using a computer simulation. In addition to using two different operating voltages, and hence a protected and unprotected bit range respectively, we have also shown the impact of using the ECC without such a split.
+
+\section{Prerequisites}
+\subsection{ECC: Single-Bit Correcting Hamming Code}
+For the ECC the single-bit correcting Hamming Code as been chosen. The reason for this is its ease of use and minimal impact on performance and bit bandwidth usage while allowing to correct up to one error. In practice this means 4 data bits are protected by 3 parity bits, 8 bits are covered by 4 and 16 bits are covered by 5 parity bits.
+
+\subsection{CNN}
+The tested neural networks were trained on the MNIST dataset \cite{726791}. The CNNs were built with one input layer, three convolutionall layers, two pooling layers and two fully connected layers. SoftMax was used as the activation function in the hidden layer and the number of steps was 2000 using a batch size of 500. The model was trained for 32-bit weights.
+
+ \subsection {Quantization in the CNN}
+ \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{img/quant.png}
+    \caption{Quantization of CNN weights, Image from \cite{jiwuSRAM}}
+    \label{fig:quant}
+\end{figure}
+The model has been quantized post-training to 4-bits, 8-bits and 16-bits using asymmetric uniform quantization. The following formula was used:
+\[ \text{Q = offset + round}(\frac{x}{\text{scale}})\]
+This method has been shown to be lower energy costs with a low loss of accuracy \cite{yangSRAM}.
+
+\section{Experimental Conditions}
+Expanding on \cite{jiwuSRAM}, which proposed   certain bits with a separate higher operating voltage while lowering the voltage on the other bits making them less protected,
+we attached ECC in order to lower the BER even further. In addition to considering two different BERs we also tested applying one BER to all bits instead.
+This was done in a simulation using Python and pytorch only. 
+
+The simulations with two different BERs tested with increasing size of protected range, starting with bit 0, only then 0-1, 0-2 etc. For each such combination the model was tested 10 times and the accuracy was averaged. The BERs in the protected range were set to the constant value of $10^{-4}$.
+The simulations using only one BER do not have a protected range.
+
+\section{Experimentation Results}
+
+Below we present the results of the simulations. We start with the idea of splitting the bits in protected and unprotected bits proposed by \cite{jiwuSRAM}. Afterwards, the results without such a split are presented. All simulations are compared to the baseline that does not use ECC to correct errors.
+
+\subsection{Different BER Simulations}
+
+\subsection{Same BER Simulations}
+
+\subsubsection{4-Bit Quantization}
+ \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/4bitsame.jpeg}
+    \caption{4-bit Quantization. The BER plotted against the overall prediction accuracy of the model.}
+    \label{fig:4bitsame}
+\end{figure}
+
+The results of the 4-bit quantization clearly show an improvement of accuracy at higher BERs allowing a reliable accuracy up to an error rate of even 0.05 after which we can see a sharp decline. This setup allows the highest BER in comparison to the other simulations of this category.
+
+\subsubsection{8-Bit Quantization}
+ \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/8bitdensesame.jpeg}
+    \caption{8-bit Quantization. The BER plotted against the overall prediction accuracy of the model.}
+    \label{fig:8bitdensesame}
+\end{figure}
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}
